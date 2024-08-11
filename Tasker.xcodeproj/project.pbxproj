@@ -8,20 +8,66 @@
 
 /* Begin PBXBuildFile section */
 		D9A3ADA82C20C8B4003310F7 /* TaskerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADA72C20C8B4003310F7 /* TaskerApp.swift */; };
-		D9A3ADAA2C20C8B4003310F7 /* TaskerDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADA92C20C8B4003310F7 /* TaskerDocument.swift */; };
 		D9A3ADAC2C20C8B4003310F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADAB2C20C8B4003310F7 /* ContentView.swift */; };
 		D9A3ADAE2C20C8B6003310F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A3ADAD2C20C8B6003310F7 /* Assets.xcassets */; };
 		D9A3ADB12C20C8B6003310F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A3ADB02C20C8B6003310F7 /* Preview Assets.xcassets */; };
+		D9A3ADBC2C20C9E3003310F7 /* TaskerTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADBB2C20C9E3003310F7 /* TaskerTask.swift */; };
+		D9A3ADBF2C20CDA5003310F7 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADBE2C20CDA5003310F7 /* Date.swift */; };
+		D9A3ADC12C20CE18003310F7 /* RepeatFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADC02C20CE17003310F7 /* RepeatFrequency.swift */; };
+		D9A3ADC32C20CF3E003310F7 /* RepeatConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADC22C20CF3E003310F7 /* RepeatConfig.swift */; };
+		D9A3ADC52C20CF66003310F7 /* RepeatUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADC42C20CF66003310F7 /* RepeatUnit.swift */; };
+		D9A3ADC72C20D02D003310F7 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADC62C20D02D003310F7 /* DayOfWeek.swift */; };
+		D9A3ADC92C20D2C3003310F7 /* MonthOfYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADC82C20D2C3003310F7 /* MonthOfYear.swift */; };
+		D9A3ADCF2C247B3D003310F7 /* ModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADCE2C247B3D003310F7 /* ModelContainer.swift */; };
+		D9A3ADD12C248128003310F7 /* ColorOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADD02C248128003310F7 /* ColorOption.swift */; };
+		D9A3ADD32C24BBF8003310F7 /* ColorOptionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADD22C24BBF8003310F7 /* ColorOptionPicker.swift */; };
+		D9A3ADD52C24BC44003310F7 /* ColorOptionTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADD42C24BC44003310F7 /* ColorOptionTile.swift */; };
+		D9A3ADD72C24BE58003310F7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADD62C24BE58003310F7 /* View.swift */; };
+		D9A3ADD92C24BF3D003310F7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADD82C24BF3D003310F7 /* Color.swift */; };
+		D9A3ADDB2C24C23C003310F7 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADDA2C24C23C003310F7 /* TaskView.swift */; };
+		D9A3ADDD2C24CBB7003310F7 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADDC2C24CBB7003310F7 /* Number.swift */; };
+		D9A3ADDF2C25369F003310F7 /* RepeatField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADDE2C25369F003310F7 /* RepeatField.swift */; };
+		D9A3ADE12C2537AF003310F7 /* IntegerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADE02C2537AF003310F7 /* IntegerField.swift */; };
+		D9A3ADE32C2539D1003310F7 /* TimeInMonthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADE22C2539D1003310F7 /* TimeInMonthType.swift */; };
+		D9E0F2B32C487D32008617D4 /* TaskGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0F2B22C487D32008617D4 /* TaskGridView.swift */; };
+		D9E0F2B52C487FB2008617D4 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0F2B42C487FB2008617D4 /* CalendarView.swift */; };
+		D9E0F2B92C48AFCE008617D4 /* TaskListViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0F2B82C48AFCE008617D4 /* TaskListViewType.swift */; };
+		D9E0F2BB2C4F1EEF008617D4 /* TaskerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0F2BA2C4F1EEF008617D4 /* TaskerConfig.swift */; };
+		D9E0F2BD2C541CF7008617D4 /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0F2BC2C541CF7008617D4 /* TaskStatus.swift */; };
+		D9E0F2BF2C5425B1008617D4 /* TaskStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0F2BE2C5425B1008617D4 /* TaskStatusButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D9A3ADA42C20C8B4003310F7 /* Tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A3ADA72C20C8B4003310F7 /* TaskerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerApp.swift; sourceTree = "<group>"; };
-		D9A3ADA92C20C8B4003310F7 /* TaskerDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerDocument.swift; sourceTree = "<group>"; };
 		D9A3ADAB2C20C8B4003310F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D9A3ADAD2C20C8B6003310F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9A3ADB02C20C8B6003310F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D9A3ADB22C20C8B6003310F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9A3ADBB2C20C9E3003310F7 /* TaskerTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerTask.swift; sourceTree = "<group>"; };
+		D9A3ADBE2C20CDA5003310F7 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		D9A3ADC02C20CE17003310F7 /* RepeatFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatFrequency.swift; sourceTree = "<group>"; };
+		D9A3ADC22C20CF3E003310F7 /* RepeatConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatConfig.swift; sourceTree = "<group>"; };
+		D9A3ADC42C20CF66003310F7 /* RepeatUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatUnit.swift; sourceTree = "<group>"; };
+		D9A3ADC62C20D02D003310F7 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
+		D9A3ADC82C20D2C3003310F7 /* MonthOfYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthOfYear.swift; sourceTree = "<group>"; };
+		D9A3ADCE2C247B3D003310F7 /* ModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainer.swift; sourceTree = "<group>"; };
+		D9A3ADD02C248128003310F7 /* ColorOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOption.swift; sourceTree = "<group>"; };
+		D9A3ADD22C24BBF8003310F7 /* ColorOptionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOptionPicker.swift; sourceTree = "<group>"; };
+		D9A3ADD42C24BC44003310F7 /* ColorOptionTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOptionTile.swift; sourceTree = "<group>"; };
+		D9A3ADD62C24BE58003310F7 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D9A3ADD82C24BF3D003310F7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D9A3ADDA2C24C23C003310F7 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		D9A3ADDC2C24CBB7003310F7 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		D9A3ADDE2C25369F003310F7 /* RepeatField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatField.swift; sourceTree = "<group>"; };
+		D9A3ADE02C2537AF003310F7 /* IntegerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerField.swift; sourceTree = "<group>"; };
+		D9A3ADE22C2539D1003310F7 /* TimeInMonthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInMonthType.swift; sourceTree = "<group>"; };
+		D9E0F2B22C487D32008617D4 /* TaskGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGridView.swift; sourceTree = "<group>"; };
+		D9E0F2B42C487FB2008617D4 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		D9E0F2B82C48AFCE008617D4 /* TaskListViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewType.swift; sourceTree = "<group>"; };
+		D9E0F2BA2C4F1EEF008617D4 /* TaskerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerConfig.swift; sourceTree = "<group>"; };
+		D9E0F2BC2C541CF7008617D4 /* TaskStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatus.swift; sourceTree = "<group>"; };
+		D9E0F2BE2C5425B1008617D4 /* TaskStatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +100,21 @@
 		D9A3ADA62C20C8B4003310F7 /* Tasker */ = {
 			isa = PBXGroup;
 			children = (
+				D9A3ADBD2C20CD97003310F7 /* System Extensions */,
+				D9A3ADB82C20C9B0003310F7 /* Domain */,
 				D9A3ADA72C20C8B4003310F7 /* TaskerApp.swift */,
-				D9A3ADA92C20C8B4003310F7 /* TaskerDocument.swift */,
+				D9A3ADE02C2537AF003310F7 /* IntegerField.swift */,
+				D9A3ADDA2C24C23C003310F7 /* TaskView.swift */,
+				D9A3ADDE2C25369F003310F7 /* RepeatField.swift */,
+				D9A3ADD22C24BBF8003310F7 /* ColorOptionPicker.swift */,
+				D9A3ADD42C24BC44003310F7 /* ColorOptionTile.swift */,
 				D9A3ADAB2C20C8B4003310F7 /* ContentView.swift */,
+				D9E0F2B42C487FB2008617D4 /* CalendarView.swift */,
 				D9A3ADAD2C20C8B6003310F7 /* Assets.xcassets */,
 				D9A3ADB22C20C8B6003310F7 /* Info.plist */,
 				D9A3ADAF2C20C8B6003310F7 /* Preview Content */,
+				D9E0F2B22C487D32008617D4 /* TaskGridView.swift */,
+				D9E0F2BE2C5425B1008617D4 /* TaskStatusButton.swift */,
 			);
 			path = Tasker;
 			sourceTree = "<group>";
@@ -70,6 +125,36 @@
 				D9A3ADB02C20C8B6003310F7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D9A3ADB82C20C9B0003310F7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D9A3ADE22C2539D1003310F7 /* TimeInMonthType.swift */,
+				D9A3ADBB2C20C9E3003310F7 /* TaskerTask.swift */,
+				D9A3ADC02C20CE17003310F7 /* RepeatFrequency.swift */,
+				D9A3ADC22C20CF3E003310F7 /* RepeatConfig.swift */,
+				D9A3ADC42C20CF66003310F7 /* RepeatUnit.swift */,
+				D9A3ADC62C20D02D003310F7 /* DayOfWeek.swift */,
+				D9A3ADC82C20D2C3003310F7 /* MonthOfYear.swift */,
+				D9A3ADD02C248128003310F7 /* ColorOption.swift */,
+				D9E0F2B82C48AFCE008617D4 /* TaskListViewType.swift */,
+				D9E0F2BA2C4F1EEF008617D4 /* TaskerConfig.swift */,
+				D9E0F2BC2C541CF7008617D4 /* TaskStatus.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D9A3ADBD2C20CD97003310F7 /* System Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D9A3ADBE2C20CDA5003310F7 /* Date.swift */,
+				D9A3ADCE2C247B3D003310F7 /* ModelContainer.swift */,
+				D9A3ADD62C24BE58003310F7 /* View.swift */,
+				D9A3ADD82C24BF3D003310F7 /* Color.swift */,
+				D9A3ADDC2C24CBB7003310F7 /* Number.swift */,
+			);
+			path = "System Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +227,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9A3ADAA2C20C8B4003310F7 /* TaskerDocument.swift in Sources */,
+				D9A3ADD32C24BBF8003310F7 /* ColorOptionPicker.swift in Sources */,
+				D9A3ADC92C20D2C3003310F7 /* MonthOfYear.swift in Sources */,
+				D9A3ADCF2C247B3D003310F7 /* ModelContainer.swift in Sources */,
+				D9A3ADC72C20D02D003310F7 /* DayOfWeek.swift in Sources */,
+				D9A3ADBF2C20CDA5003310F7 /* Date.swift in Sources */,
+				D9A3ADDF2C25369F003310F7 /* RepeatField.swift in Sources */,
+				D9E0F2B52C487FB2008617D4 /* CalendarView.swift in Sources */,
+				D9A3ADE32C2539D1003310F7 /* TimeInMonthType.swift in Sources */,
+				D9E0F2B92C48AFCE008617D4 /* TaskListViewType.swift in Sources */,
+				D9A3ADC12C20CE18003310F7 /* RepeatFrequency.swift in Sources */,
+				D9A3ADD52C24BC44003310F7 /* ColorOptionTile.swift in Sources */,
+				D9A3ADDB2C24C23C003310F7 /* TaskView.swift in Sources */,
+				D9E0F2BF2C5425B1008617D4 /* TaskStatusButton.swift in Sources */,
+				D9A3ADDD2C24CBB7003310F7 /* Number.swift in Sources */,
+				D9E0F2BD2C541CF7008617D4 /* TaskStatus.swift in Sources */,
+				D9A3ADC52C20CF66003310F7 /* RepeatUnit.swift in Sources */,
+				D9E0F2B32C487D32008617D4 /* TaskGridView.swift in Sources */,
+				D9A3ADD92C24BF3D003310F7 /* Color.swift in Sources */,
+				D9A3ADD12C248128003310F7 /* ColorOption.swift in Sources */,
+				D9A3ADC32C20CF3E003310F7 /* RepeatConfig.swift in Sources */,
+				D9A3ADBC2C20C9E3003310F7 /* TaskerTask.swift in Sources */,
 				D9A3ADA82C20C8B4003310F7 /* TaskerApp.swift in Sources */,
+				D9A3ADD72C24BE58003310F7 /* View.swift in Sources */,
+				D9E0F2BB2C4F1EEF008617D4 /* TaskerConfig.swift in Sources */,
 				D9A3ADAC2C20C8B4003310F7 /* ContentView.swift in Sources */,
+				D9A3ADE12C2537AF003310F7 /* IntegerField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
