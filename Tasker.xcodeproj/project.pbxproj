@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D918C4CD2C6AE03700C9CD3B /* TaskSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918C4CC2C6AE03700C9CD3B /* TaskSectionView.swift */; };
 		D9A3ADA82C20C8B4003310F7 /* TaskerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADA72C20C8B4003310F7 /* TaskerApp.swift */; };
 		D9A3ADAC2C20C8B4003310F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3ADAB2C20C8B4003310F7 /* ContentView.swift */; };
 		D9A3ADAE2C20C8B6003310F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A3ADAD2C20C8B6003310F7 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D918C4CC2C6AE03700C9CD3B /* TaskSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSectionView.swift; sourceTree = "<group>"; };
 		D9A3ADA42C20C8B4003310F7 /* Tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A3ADA72C20C8B4003310F7 /* TaskerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerApp.swift; sourceTree = "<group>"; };
 		D9A3ADAB2C20C8B4003310F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				D9A3ADD22C24BBF8003310F7 /* ColorOptionPicker.swift */,
 				D9A3ADD42C24BC44003310F7 /* ColorOptionTile.swift */,
 				D9A3ADAB2C20C8B4003310F7 /* ContentView.swift */,
+				D918C4CC2C6AE03700C9CD3B /* TaskSectionView.swift */,
 				D9E0F2B42C487FB2008617D4 /* CalendarView.swift */,
 				D9A3ADAD2C20C8B6003310F7 /* Assets.xcassets */,
 				D9A3ADB22C20C8B6003310F7 /* Info.plist */,
@@ -247,6 +250,7 @@
 				D9A3ADD92C24BF3D003310F7 /* Color.swift in Sources */,
 				D9A3ADD12C248128003310F7 /* ColorOption.swift in Sources */,
 				D9A3ADC32C20CF3E003310F7 /* RepeatConfig.swift in Sources */,
+				D918C4CD2C6AE03700C9CD3B /* TaskSectionView.swift in Sources */,
 				D9A3ADBC2C20C9E3003310F7 /* TaskerTask.swift in Sources */,
 				D9A3ADA82C20C8B4003310F7 /* TaskerApp.swift in Sources */,
 				D9A3ADD72C24BE58003310F7 /* View.swift in Sources */,

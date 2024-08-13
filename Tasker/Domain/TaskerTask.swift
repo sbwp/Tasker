@@ -11,13 +11,17 @@ import SwiftData
 @Model
 final class TaskerTask: Identifiable, Comparable {
     static func < (lhs: TaskerTask, rhs: TaskerTask) -> Bool {
-        let lst = lhs.sortTime ?? lhs.showAfter ?? .practicallyNow.noon
-        let rst = rhs.sortTime ?? rhs.showAfter ?? .practicallyNow.noon
+        let lst = lhs.effectiveSortTime
+        let rst = rhs.effectiveSortTime
         if !lst.equalByTimeOnly(rst) {
             return lst.lessThanByTimeOnly(rst)
         }
         return lhs.name < rhs.name
     }
+    
+    static let morningCutOff = Date().setTime(hour: 9, minute: 0, second: 0)
+    static let hygieneCutOff = Date().setTime(hour: 22, minute: 0, second: 0)
+    static let bedtimeCutOff = Date().setTime(hour: 23, minute: 0, second: 0)
     
     let id: UUID
     var name: String
@@ -30,6 +34,10 @@ final class TaskerTask: Identifiable, Comparable {
     var doLateDays: Int
     var notes: String
     var sortTime: Date?
+    
+    var effectiveSortTime: Date {
+        sortTime ?? showAfter ?? .practicallyNow.startOfDay
+    }
     
     static var forPreview: TaskerTask {
         TaskerTask(name: "Test")

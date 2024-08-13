@@ -19,7 +19,7 @@ extension Date {
     }
     
     var endOfDay: Date {
-        return Date.from(year: self.year, month: self.month, day: self.dayOfMonth, hour: 23, minute: 59, second: 59)!
+        return setTime(hour: 23, minute: 59, second: 59)
     }
     
     var dayOfWeekEnum: DayOfWeek {
@@ -244,6 +244,10 @@ extension Date {
     var lastDayOfYear: Date {
         let december = Calendar.current.date(bySetting: .month, value: 12, of: self)!
         return Calendar.current.date(bySetting: .day, value: 31, of: december)!
+    }
+    
+    func setTime(hour: Int, minute: Int, second: Int) -> Date {
+        return Date.from(year: self.year, month: self.month, day: self.dayOfMonth, hour: hour, minute: minute, second: second)!
     }
     
     // This isn't very pretty

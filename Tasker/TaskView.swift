@@ -101,7 +101,7 @@ struct TaskView: View {
                         set: {
                             if $0 {
                                 if task.sortTime == nil {
-                                    task.sortTime = Date.practicallyNow.noon
+                                    task.sortTime = Date.practicallyNow.startOfDay
                                 }
                             } else {
                                 task.sortTime = nil
