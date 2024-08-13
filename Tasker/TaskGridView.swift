@@ -4,7 +4,7 @@ import SwiftUI
 
 struct TaskGridView: View {
     @Bindable var task: TaskerTask
-    var now: Date
+    var date: Date
     
     var timeText: String {
         if let showAfter = task.showAfter {
@@ -15,11 +15,13 @@ struct TaskGridView: View {
     }
     
     var statusText: String {
-        if task.isDone(on: now) {
+        if task.isDone(on: date) {
             return "Good job!"
-        } else if task.isPredone(before: now) {
+        } else if task.isPredone(before: date) {
             return "Done early, nice!"
-        } else if task.occurs(on: now, includeMissed: false) {
+        } else if date.isToday && task.isSnoozed(at: date) {
+            return "Snoozed until \(task.snoozeText)"
+        } else if task.occurs(on: date, includeMissed: false) {
             return "Due now"
         } else {
             return "Overdue"
@@ -33,8 +35,8 @@ struct TaskGridView: View {
             
             Spacer(minLength: 0)
             
-            if (task.occurs(on: now, includeMissed: true)) {
-                TaskStatusButton(task: task, now: now)
+            if (task.occurs(on: date, includeMissed: true)) {
+                TaskStatusButton(task: task, now: date)
                 Spacer(minLength: 0)
                 Text(statusText)
             } else {
@@ -43,7 +45,7 @@ struct TaskGridView: View {
                 
                 Spacer(minLength: 0)
                 
-                Text("(\(task.nextOccurrenceDescription(at: now)))")
+                Text("(\(task.nextOccurrenceDescription(at: date)))")
                     .opacity(0.6)
             }
         }
@@ -57,5 +59,5 @@ struct TaskGridView: View {
 }
 
 #Preview {
-    TaskGridView(task: .forPreview, now: .practicallyNow)
+    TaskGridView(task: .forPreview, date: .practicallyNow)
 }

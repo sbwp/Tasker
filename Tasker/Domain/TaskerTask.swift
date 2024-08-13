@@ -44,6 +44,18 @@ final class TaskerTask: Identifiable, Comparable {
         TaskerTask(name: "Test")
     }
     
+    var snoozeText: String {
+        guard let snoozeExpiration = snoozeExpiration else {
+            return ""
+        }
+        
+        if snoozeExpiration.isSameDay(as: .practicallyNow) {
+            return snoozeExpiration.formattedAsTime
+        } else {
+            return snoozeExpiration.relativeDescription(to: .practicallyNow)
+        }
+    }
+    
     init(name: String, colorOption: ColorOption? = nil, repeatConfig: RepeatConfig? = nil, showAfter: Date? = nil, notes: String = "", sortTime: Date? = nil, doEarlyDays: Int = 0, doLateDays: Int = 365) {
         self.id = UUID()
         self.name = name
@@ -110,21 +122,7 @@ final class TaskerTask: Identifiable, Comparable {
     }
     
     func nextOccurrenceDescription(at date: Date) -> String {
-        let result = repeatConfig.nextOccurrence(from: date)
-        
-        if result.isSameDay(as: date) {
-            return "Today"
-        } else if result.isSameDay(as: date.tomorrow) {
-            return "Tomorrow"
-        }
-        
-        if date.isInSameWeek(as: result) {
-            return result.dayOfWeekEnum.description
-        } else if date.addDays(7).isInSameWeek(as: result) {
-            return "Next \(result.dayOfWeekEnum.description)"
-        }
-        
-        return result.formatted(year: date.isInSameYear(as: result) ? .none : .full, month: .short, day: .full)
+        return repeatConfig.nextOccurrence(from: date).relativeDescription(to: date)
     }
     
     func isDone(on date: Date) -> Bool {

@@ -476,7 +476,7 @@ extension Date {
     
     var isToday: Bool {
         return self.isSameDay(as: Date.practicallyNow)
-    }
+}
     
     var isFutureAndNotToday: Bool {
         return self > Date.practicallyNow && !isToday
@@ -540,6 +540,22 @@ extension Date {
         case long
         case full
         case variable
+    }
+    
+    func relativeDescription(to date: Date) -> String {
+        if isSameDay(as: date) {
+            return "Today"
+        } else if isSameDay(as: date.tomorrow) {
+            return "Tomorrow"
+        }
+        
+        if date.isInSameWeek(as: self) {
+            return dayOfWeekEnum.description
+        } else if date.addDays(7).isInSameWeek(as: self) {
+            return "Next \(dayOfWeekEnum.description)"
+        }
+        
+        return formatted(year: date.isInSameYear(as: self) ? .none : .full, month: .short, day: .full)
     }
     
     func formatted(fromTemplate template: String) -> String {

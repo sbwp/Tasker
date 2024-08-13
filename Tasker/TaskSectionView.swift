@@ -13,7 +13,7 @@ struct TaskSectionView: View {
                 NavigationLink {
                     TaskView(task: task, date: date)
                 } label: {
-                    TaskGridView(task: task, now: date)
+                    TaskGridView(task: task, date: date)
                         .contextMenu {
                             if task.isSnoozed(at: date) {
                                 Button("Unsnooze") {
