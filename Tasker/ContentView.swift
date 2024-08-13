@@ -114,7 +114,7 @@ struct ContentView: View {
                         if showCategories[category.2] {
                             TaskSectionView(date: date, tasks: category.1)
                                 .padding(.top, 25)
-                                .background(categoryHeaderBackgrounds[category.2].color.opacity(0.15))
+                                .background(categoryHeaderBackgrounds[category.2].color.opacity(category.2 == 3 ? 0.5 : 0.17))
                                 .clipShape(.rect(
                                     topLeadingRadius: 0,
                                     bottomLeadingRadius: 5,
