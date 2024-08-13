@@ -27,7 +27,11 @@ struct ContentView: View {
             : tasks.filter({
                 (showDoneSkipped || !$0.isDoneOrPredone(on: date) && !$0.isSkipped(on: date))
                 && $0.occurs(on: date, includeMissed: true)
-                && (!hideByTime || $0.shouldShow(at: date) || !$0.occurs(on: date, includeMissed: false))
+                && (
+                    !hideByTime
+                    || $0.shouldShow(at: date)
+                    || (!$0.occurs(on: date, includeMissed: false) && !$0.isSnoozed(at: date))
+                )
             })
         
         return r.sorted()

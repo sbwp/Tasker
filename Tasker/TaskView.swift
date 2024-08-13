@@ -112,6 +112,23 @@ struct TaskView: View {
                     if task.sortTime != nil {
                         DatePicker("Estimated Time", selection: Binding(get: { task.sortTime ?? Date.practicallyNow.noon}, set: { task.sortTime = $0 }), displayedComponents: [.hourAndMinute])
                     }
+                    
+                    Toggle("Snooze", isOn: Binding(
+                        get: { task.snoozeExpiration != nil },
+                        set: {
+                            if $0 {
+                                if task.snoozeExpiration == nil {
+                                    task.snoozeOneHour(from: .practicallyNow)
+                                }
+                            } else {
+                                task.snoozeExpiration = nil
+                            }
+                        }
+                    ))
+                    .tint(task.colorOption.successColor)
+                    if task.snoozeExpiration != nil {
+                        DatePicker("Snooze Until", selection: Binding(get: { task.snoozeExpiration ?? .practicallyNow.add(1, .hour)}, set: { task.snoozeExpiration = $0 }), displayedComponents: [.date, .hourAndMinute])
+                    }
                 } else {
                     HStack {
                         Text("\(task.repeatConfig.description)\(task.showAfter == nil ? "" : " after \(task.showAfter!.formattedAsTime)")")
