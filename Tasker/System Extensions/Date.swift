@@ -99,6 +99,10 @@ extension Date {
         !isWeekend
     }
     
+    var isEndOfDay: Bool {
+        hour > 22 && minute > 58
+    }
+    
     func isA(_ weekday: DayOfWeek) -> Bool {
         this(weekday) == self
     }
@@ -121,6 +125,10 @@ extension Date {
     
     func isInSameYear(as date: Date) -> Bool {
         year == date.year
+    }
+    
+    func hasHoursLeftInDay(_ hours: Int) -> Bool {
+        return hour < 24 - hours
     }
     
     func coincidesBiweekly(with date: Date) -> Bool {

@@ -29,7 +29,8 @@ final class TaskerTask: Identifiable, Comparable {
     var repeatConfig: RepeatConfig
     var completedDates: [Date]
     var skippedDates: [Date]
-    var showAfter: Date?
+    var snoozeExpiration: Date? // Datetime to temporarily hide this task until (does not effect status/history)
+    var showAfter: Date? // Time each day after which to show the task
     var doEarlyDays: Int
     var doLateDays: Int
     var notes: String
@@ -82,7 +83,7 @@ final class TaskerTask: Identifiable, Comparable {
     }
     
     func shouldShow(at time: Date) -> Bool {
-        return showAfter == nil || time.greaterThanByTimeOnly(showAfter!)
+        return (showAfter == nil || time.greaterThanByTimeOnly(showAfter!)) && !isSnoozed(at: time)
     }
     
     func occurs(on date: Date, includeMissed: Bool = false) -> Bool {
@@ -148,6 +149,33 @@ final class TaskerTask: Identifiable, Comparable {
     
     func isSkipped(on date: Date) -> Bool {
         return skippedDates.contains(date.noon)
+    }
+    
+    func isSnoozed(at datetime: Date) -> Bool {
+        guard let snoozeExpiration = snoozeExpiration else {
+            return false
+        }
+        return snoozeExpiration > datetime
+    }
+    
+    func unsnooze() -> Void {
+        snoozeExpiration = nil
+    }
+    
+    func snooze(until datetime: Date) -> Void {
+        snoozeExpiration = datetime
+    }
+    
+    func snoozeOneHour(from datetime: Date) -> Void {
+        if datetime.hasHoursLeftInDay(1) {
+            snoozeExpiration = datetime.add(1, .hour)
+        } else {
+            snoozeExpiration = datetime.endOfDay.add(-1, .minute)
+        }
+    }
+    
+    func snoozeOneDay(from datetime: Date) -> Void {
+        snoozeExpiration = datetime.add(1, .day)
     }
     
     func getStatus(for date: Date) -> TaskStatus {

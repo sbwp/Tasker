@@ -11,7 +11,7 @@ struct TaskView: View {
     @Environment(\.editMode) var editModeWrapper
     @Bindable var task: TaskerTask
     @State var showNotes: Bool = true
-    var now: Date
+    var date: Date
     
     var editMode: EditMode {
         editModeWrapper?.wrappedValue ?? .inactive
@@ -120,11 +120,24 @@ struct TaskView: View {
                 }
                 
                 if (editMode != .active) {
-                    if (task.occurs(on: now, includeMissed: true)) {
-                        TaskStatusButton(task: task, now: now)
+                    if (task.occurs(on: date, includeMissed: true)) {
+                        TaskStatusButton(task: task, now: date)
                             .contextMenu {
-                                Button(task.isSkipped(on: now) ? "Mark Unskipped" : "Mark Skipped") {
-                                    task.toggleSkipped(on: now)
+                                if task.isSnoozed(at: date) {
+                                    Button("Unsnooze") {
+                                        task.unsnooze()
+                                    }
+                                }
+                                if !date.isEndOfDay {
+                                    Button("Snooze for 1 Hour") {
+                                        task.snoozeOneHour(from: date)
+                                    }
+                                }
+                                Button("Snooze for 1 Day") {
+                                    task.snoozeOneDay(from: date)
+                                }
+                                Button(task.isSkipped(on: date) ? "Mark Unskipped" : "Mark Skipped") {
+                                    task.toggleSkipped(on: date)
                                 }
                             }
                     }
@@ -176,7 +189,7 @@ struct TaskView: View {
 
 #Preview {
     NavigationStack {
-        TaskView(task: TaskerTask.forPreview, now: .practicallyNow)
+        TaskView(task: TaskerTask.forPreview, date: .practicallyNow)
             .modelContainer(.forPreview)
     }
 }
