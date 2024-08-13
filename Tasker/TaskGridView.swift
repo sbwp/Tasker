@@ -33,7 +33,7 @@ struct TaskGridView: View {
             
             Spacer(minLength: 0)
             
-            if (task.occurs(on: now, includeMissed: true) && task.shouldShow(at: now)) {
+            if (task.occurs(on: now, includeMissed: true)) {
                 TaskStatusButton(task: task, now: now)
                 Spacer(minLength: 0)
                 Text(statusText)

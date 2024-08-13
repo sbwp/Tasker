@@ -4,6 +4,6 @@ import Foundation
 
 enum TaskListViewType: String, CaseIterable {
     case all = "All"
-    case today = "Today"
+    case day = "Full Day"
     case dueNow = "Due Now"
 }

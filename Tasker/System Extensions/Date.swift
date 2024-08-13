@@ -15,19 +15,11 @@ extension Date {
     }
     
     static var practicallyNow: Date {
-        var literalNow = now
-        var hour = now.hour
-        var minute = now.minute
-        var second = now.second
-        
-        if literalNow.hour < 4 {
-            literalNow = literalNow.yesterday
-            hour = 23
-            minute = 59
-            second = 59
-        }
-        
-        return Date.from(year: literalNow.year, month: literalNow.month, day: literalNow.dayOfMonth, hour: hour, minute: minute, second: second)!
+        return now.hour < 4 ? now.yesterday.endOfDay : now
+    }
+    
+    var endOfDay: Date {
+        return Date.from(year: self.year, month: self.month, day: self.dayOfMonth, hour: 23, minute: 59, second: 59)!
     }
     
     var dayOfWeekEnum: DayOfWeek {
