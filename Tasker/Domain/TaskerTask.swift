@@ -173,7 +173,7 @@ final class TaskerTask: Identifiable, Comparable {
     }
     
     func snoozeOneDay(from datetime: Date) -> Void {
-        snoozeExpiration = datetime.add(1, .day)
+        snoozeExpiration = datetime.add(1, .day).startOfDay
     }
     
     func getStatus(for date: Date) -> TaskStatus {

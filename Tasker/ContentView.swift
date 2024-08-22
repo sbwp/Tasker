@@ -72,7 +72,12 @@ struct ContentView: View {
                 .padding(.horizontal)
                 .padding(.bottom)
                 .onChange(of: taskListViewType, { updateDates(force: true) })
-                .onChange(of: scenePhase, { updateDates() })
+                .onChange(of: scenePhase, {
+                    if scenePhase == .active {
+                        updateDates()
+                    }
+                        
+                })
                 .onAppear() {
                     updateDates(force: true)
                     tasks.forEach { task in
@@ -150,7 +155,7 @@ struct ContentView: View {
         let then = lastRefreshDate
         lastRefreshDate = .practicallyNow
         
-        if force || !lastRefreshDate.isSameDay(as: then) && lastRefreshDate.isSameDay(as: date) {
+        if (force || taskListViewType == .dueNow) || !lastRefreshDate.isSameDay(as: then) && lastRefreshDate.isSameDay(as: date) {
             date = lastRefreshDate
         }
     }
