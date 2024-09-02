@@ -109,10 +109,22 @@ final class TaskerTask: Identifiable, Comparable {
         
         var current = date.yesterday
         
+        // Handles doing a task late
         while current.noon > repeatConfig.startDate.startOfDay && Date.daysBetween(current, and: date) <= doLateDays {
             if isDone(on: current) || isSkipped(on: current) {
                 return false
             } else if repeatConfig.occursOn(current) {
+                // Handles doing a task early
+                let lastOccurrence = current.noon
+                current = current.yesterday
+                while current.noon > repeatConfig.startDate.startOfDay && Date.daysBetween(current, and: lastOccurrence) <= doEarlyDays {
+                    if repeatConfig.occursOn(current) {
+                        return true
+                    } else if isDone(on: current) || isSkipped(on: current) {
+                        return false
+                    }
+                    current = current.yesterday
+                }
                 return true
             }
             current = current.yesterday
